@@ -79,6 +79,7 @@ line-height: normal;
 color: var(--violet-clair); 
 letter-spacing: 0.02em; 
 text-transform: uppercase; 
+padding-top: 40px;
 } 
 
 /* Ligne */ 
@@ -247,4 +248,128 @@ line-height: normal;
 color: var(--violet-label); 
 /* Remonte légèrement par rapport au gap de .field-group */ 
 margin-top: -4px; 
+} 
+
+/* bloc info (Section 04 — on-site notice) */ 
+.info-box { 
+background-color: var(--bg-info); 
+border-left: 3px solid var(--violet-clair); 
+border-radius: var(--radius); 
+padding: 18px 22px; 
+} 
+
+.info-box p { 
+font-family: var(--font-helvetica); 
+font-size: 15px; 
+font-weight: 400; 
+line-height: 1.6; 
+color: var(--blanc); 
+} 
+
+/* Le mot "On-site participants" est en gras (strong) */ 
+.info-box p strong { 
+font-weight: 700; 
+} 
+
+/* liste des consentements (Section 05) */ 
+.consent-list { 
+list-style: none; 
+display: flex; 
+flex-direction: column; 
+gap: 20px; 
+} 
+
+/* Chaque ligne = label cliquable */ 
+.consent-label { 
+display: flex; 
+align-items: flex-start; 
+gap: 16px; 
+cursor: pointer; 
+} 
+
+/* Input natif caché */ 
+.consent-checkbox { 
+display: none; 
+} 
+
+/* Carré custom qui remplace la checkbox */ 
+.checkmark { 
+width: 22px; 
+height: 22px; 
+border: 2px solid var(--violet-clair); 
+border-radius: 3px; 
+background-color: transparent; 
+flex-shrink: 0; 
+margin-top: 2px; /* alignement optique avec le texte */ 
+transition: background-color 0.2s ease; 
+position: relative; 
+} 
+
+/* Coche SVG quand coché */ 
+.consent-checkbox:checked + .checkmark::after { 
+content: ""; 
+display: block; 
+position: absolute; 
+top: 2px; 
+left: 5px; 
+width: 7px; 
+height: 12px; 
+border: 2px solid var(--blanc); 
+border-top: none; 
+border-left: none; 
+transform: rotate(45deg); 
+} 
+
+.consent-checkbox:checked + .checkmark { 
+background-color: var(--violet-clair); 
+} 
+
+/* Texte des consentements */ 
+.consent-text { 
+font-family: var(--font-helvetica); 
+font-size: 15px; 
+font-weight: 400; 
+line-height: 1.5; 
+color: var(--blanc); 
+} 
+
+.consent-text u { 
+text-decoration: underline; 
+text-underline-offset: 3px; 
+} 
+
+.consent-text strong { 
+font-weight: 700; 
+} 
+
+/* boutton submit */ 
+.submit-wrapper { 
+display: flex; 
+justify-content: center; 
+padding-top: 16px; 
+} 
+ 
+.submit-btn { 
+display: inline-block; 
+background-color: var(--blanc); 
+color: #3d3a6b; 
+font-family: var(--font-helvetica); 
+font-size: 24px; 
+font-weight: 700; 
+line-height: normal; 
+padding: 18px 48px; 
+border: none; 
+border-radius: var(--radius); 
+cursor: pointer; 
+transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease; 
+letter-spacing: 0.01em; 
+} 
+ 
+.submit-btn:hover { 
+background-color: var(--violet-clair); 
+color: var(--blanc); 
+} 
+ 
+.submit-btn:active { 
+transform: scale(0.98); 
 } 
